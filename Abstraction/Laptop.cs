@@ -24,18 +24,17 @@ namespace Abstraction
         ///It diasplays Brand and Model of laptop.
         /// </summary>
 
-        public void LaptopDetail()
+        public string LaptopDetail()
         {
-            Console.WriteLine("Brand : " + Brand);
-            Console.WriteLine("Model : " + Model);
+            return $"Brand : {Brand}\nModel : {Model}";
         }
-        /// <summary>
-        /// Private MotherBoardInfo Function that prints some information.
-        /// </summary>
-        private void MotherBoardInfo()
+         /// <summary>
+         /// Print MotherBoard Information
+         /// </summary>
+         /// <returns>string</returns>
+        private string MotherBoardInfo()
         {
-            Console.WriteLine("Mother Board Information !");
-
+            return "Mother Board Information !";
         }
 
         public static void Main(string[] args)
@@ -44,8 +43,8 @@ namespace Abstraction
             laptop.Brand = "HP";
             laptop.Model = "HP Pavailion";
 
-            laptop.LaptopDetail();
-            laptop.MotherBoardInfo();
+            Console.WriteLine(laptop.LaptopDetail());
+            Console.WriteLine(laptop.MotherBoardInfo()); 
         }
 
     }

@@ -9,42 +9,39 @@ namespace Polymorphism
     class Bird
     {
         /// <summary>
-        /// Void typed Method Voice that only prints initial Bird voice.
+        /// returns string that contains Parent Bird voice
         /// </summary>
-        public void Voice()
+        /// <returns>string</returns>
+        public virtual string Voice()
         {
-            Console.WriteLine("Turr Turr");
+            return "Parent : Turr Turr";
         }
     }
 
     class Duck : Bird
     {
         /// <summary>
-        /// Void typed Method Voice that only prints initial Duck voice.
+        /// returns string that contains Child Bird voice
         /// </summary>
-        public void Voice()
+        /// <returns>string</returns>
+        public override string Voice()
         {
-            Console.WriteLine("Quack Quack");
+            return "Child : Quack Quack";
         }
 
         public static void Main(string[] args)
         {
-
-            //Bird bird = new Bird();
+            
             Duck duck = new Duck();
+            Console.WriteLine(duck.Voice()); 
 
             Bird myBird = new Bird();
+            Console.WriteLine(myBird.Voice() ); 
 
-            //  Duck myDuck = new Bird();
             Bird bird = new Duck();
-            bird.Voice();
-
-
-            myBird.Voice();
-
-            // myDuck.Voice();
-            duck.Voice();
-            //bird.Voice();
+            Console.WriteLine(bird.Voice());
+           
+            
         }
     }
 }

@@ -8,37 +8,35 @@ using System.Threading.Tasks;
 
 namespace Inheritance
 {
-      class Sponsor
+    class Sponsor
     {
-        protected string owner = "Rakuteen";
+        protected string owner = "Gaurav";
 
     }
 
-    class Team : Sponsor {
+    class Team : Sponsor
+    {
         private string teamName = " Gujarat Titans";
-        public string concatedString; 
+        public string concatedString;
 
-      
+
         public static void Main(string[] args)
         {
             Team team = new Team();
-        
-
-            team.concatedString=   team.PrintInfo(team.owner, team.teamName);
-            Console.WriteLine("Concated String : "+team.concatedString);
+            team.concatedString = team.PrintInfo(team.owner, team.teamName);
+            Console.WriteLine($"Concated String : {team.concatedString}");
         }
-       
+
         /// <summary>
         /// PrintInfo method Takes two stirng argument and it returns concatineted string .
         /// </summary>
         /// <param name="owner"></param>
         /// <param name="name"></param>
         /// <returns>string </returns>
-        public string PrintInfo(string owner ,string name)
+        public string PrintInfo(string owner, string name)
         {
-         
-            return owner+ name; 
+            return string.Concat(owner, name);
         }
-    
+
     }
 }
